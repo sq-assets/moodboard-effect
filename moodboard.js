@@ -256,7 +256,10 @@
         const x = startX + (cfg.x * vw - startX) * eased;
         const y = startY + (cfg.y * vh - startY) * eased;
         const rot = startRot + (cfg.rot - startRot) * eased;
-        const scale = 2.00 + (cfg.scale - 2.00) * eased;
+             const startScale = vw < 640 ? 1.1 : 2.00;
+const scale = startScale + (cfg.scale - startScale) * eased;
+
+  
 
         el.style.transform =
           'translate(-50%, -50%) translate(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px) ' +
